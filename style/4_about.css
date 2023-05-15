@@ -1,0 +1,71 @@
+#about {
+    background-color: orange;
+}
+
+.about {
+    display: inline-flex;
+    gap: 1em;
+    margin-top: 48px;
+}
+
+.about__card {
+    padding: 48px;
+    text-align: center;
+    color: white;
+    background-color: slategray;
+    border-radius: 12px;
+    }
+
+.about__title{
+    margin-top: 0.6em;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about__title._1{
+    color: beige;
+}
+
+.about__title._2{
+    color: cornflowerblue; 
+}
+
+.about__title._3{
+    color: darkgoldenrod;
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #about {
+        grid-column: 1 / -1;
+    }
+    .about__card {
+        width: 320px;
+        cursor: pointer;
+        /* 마우스 커서 */
+        transition: all 350ms;
+        /* 변화를 얼마나 부드럽게 설정하는냐 */
+    }   
+
+    .about:hover .about__card:not(:hover) {
+        transform: scale(0.9);
+    }
+
+    .about:hover .about__card:not(:hover)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(2px);
+    }
+
+}
